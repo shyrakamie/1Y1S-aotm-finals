@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            dotArtist | Damsel
+        </title>
+        <link rel="stylesheet" href="damsel-aotm-css.css">
+    </head>
+
+    <body>
+        <main>
+            <div class="damsel-personal-aotm">
+                <section class="menu">
+                    <video class="menu-video" autoplay muted loop playsinline>
+                        <source src="p3r.mp4" type="video/mp4">
+                    </video>
+                    <audio id="aotm-audio" src="p3r.mp3" type="audio/mpeg" preload="auto"></audio>
+                    <audio id="song-audio" src="just a hug - Lauryn Kovacs.mp3" type="audio/mpeg" preload="auto"></audio>
+                    <div class="menu-overlay"></div>
+
+
+                    <nav class="aotm-card">
+                        <a>ARTIST OF THE MONTH </a> <br>
+                        <button id="btn1" class="menu-btn" data-target="play">PLAY</button>
+                        <button id="btn2" class="menu-btn" data-target="info">INFO</button>
+                        <button id="btn3" class="menu-btn" data-target="songs">SONGS</button>
+                        <a href="damsel.html" id="btn5" class="menu-btn">RETURN</a>
+                    </nav>
+
+                    <main class="right-panel">
+                        <div id="play" class="panel-content">
+                            <img src="fwmc.jpg" class="aotm-cover">
+                            <p class="aotm-cover-text">just a hug</p>
+                            <p class="aotm-cover-subtext">Lauryn Kovacs</p>
+                        </div>
+
+                        <div id="info" class="panel-content">
+                            <p class="aotm-song-info"><strong>Lauryn Kovacs</strong> is a Canadian singer and songwriter who has gained traction with audiences for original tracks including "unwind", "in our dreams" and "subside".</p>
+                        </div>
+
+                        <div id="songs" class="panel-content">
+                            <h2>Unwind<br>Leaving Town<br>Perfectly Fine<br>one in a million<br>rubber boots</h2>
+                        </div>
+                    </main>
+
+                </section>
+            </div>
+        </main>
+        <script src="damsel-aotm.js"></script>
+    </body>
+</html>

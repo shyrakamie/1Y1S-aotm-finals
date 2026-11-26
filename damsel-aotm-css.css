@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.menu {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+.menu-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+a {
+    text-align: left;
+    padding-left: 40px;
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: Arial;
+    transform: rotate(-7deg);
+}
+
+.aotm-card {
+    position: absolute;
+    z-index: 2;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 100px;
+    transform: rotate(-10deg);
+    animation: fadeIn 5s linear forwards;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 36pt;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    padding: 4px 25px;
+    margin: -4px 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    position: relative;
+    z-index: -4;
+    width: fit-content;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.menu-btn::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    background: rgba(255, 255, 255);
+    clip-path: polygon(90% 46%, 10% 29%, 19% 85%);
+    opacity: 0;
+    z-index: -2;
+    pointer-events: none;
+}
+.menu-btn::after {
+    content: "";
+    position: absolute;
+    inset: -16px;
+    background: rgb(255, 59, 59);
+    clip-path: polygon(100% 46%, 0 20%, 13% 94%);
+    opacity: 0;
+    z-index: -3;
+    pointer-events: none;
+}
+.menu-btn:hover::before {
+    opacity: 1;
+    animation: triangle1 0.5s ease infinite;
+}
+
+.menu-btn:hover::after {
+    opacity: 1;
+    animation: triangle2 0.65s ease infinite;
+}
+#btn1 {
+    transform: rotate(-10deg);
+    color:rgb(63, 162, 255);
+    z-index: 2;
+}
+#btn2 {
+    transform: rotate(10deg);
+    color:rgb(87, 171, 250);
+    z-index: 2;
+}
+#btn3 {
+    transform: rotate(-7deg);
+    color:rgb(206, 231, 255);
+    z-index: 2;
+}
+#btn4 {
+    transform: rotate(-2deg);
+    color:rgb(121, 189, 254);
+    z-index: 2;
+}
+#btn5 {
+    transform: rotate(7deg);
+    color:rgb(144, 201, 254);
+    z-index: 2;
+    text-decoration: none;
+}
+#btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover {
+    transform: translateX(10px);
+    color:black;
+    animation: triangle1 0.5 ease loop;
+    animation: triangle2 ease;
+}
+
+.right-panel {
+    width: 100%;
+    padding-bottom: 90px;
+    display: grid;
+    align-items: start;
+    justify-content: end;
+}
+.panel-content { 
+    display: none;
+    max-width: 480px;
+    width: 100%;
+    background: rgba(0, 15, 45, 0.75); border-left: 6px solid #38c6ff;
+    padding: 35px;
+    backdrop-filter: blur(8px);
+    animation: slideIn 0.25s ease forwards;
+}
+.panel-content.active {
+    display: block;
+}
+
+.panel-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.aotm-cover {
+    max-width: 200px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    transform: rotate(7deg);
+    border-radius: 20px;
+    corner-shape: squircle;
+    margin: 20px;
+}
+
+.aotm-cover-text {
+    text-align: left;
+    color:#ffffff;
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: Arial;
+    padding-left: 48px;
+}
+
+.aotm-cover-subtext {
+    text-align: left;
+    color:#ffffff;
+    font-size: 18pt;
+    font-family: Arial;
+    padding-left: 45px;
+}
+
+.aotm-song-info {
+    text-align: left;
+    color:#ffffff;
+    font-size: 12pt;
+    font-family: Arial;
+    padding-left: 20px;
+}
+
+.about-artist {
+    text-align: left;
+    color:#ffffff;
+    font-size: 12pt;
+    font-family: Arial;
+    padding-left: 20px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        tansform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    34% {
+        opacity: 0;
+    }
+    35% {
+        opacity: 1;
+    }
+}
+
+@keyframes triangle1 {
+    0% {
+        clip-path: polygon(90% 46%, 10% 29%, 19% 85%);
+        z-index: -1;
+    }
+    50% {
+        clip-path: polygon(95% 66%, 22% 29%, 6% 81%);
+        z-index: -1;
+    }
+    100% {
+        clip-path: polygon(87% 50%, 8% 38%, 28% 77%);
+        z-index: -1;
+    }
+}
+
+@keyframes triangle2 {
+    0% {
+        clip-path: polygon(100% 46%, 0 20%, 13% 94%);
+        z-index: -2;
+    }
+    50% {
+        clip-path: polygon(100% 66%, 18% 21%, 0 90%);
+        z-index: -2;
+    }
+    100% {
+        clip-path: polygon(100% 40%, 0 31%, 29% 89%);
+        z-index: -2;
+    }
+}
+
+h2 {
+    font-family: Arial;
+    color:#ffffff;
+}
